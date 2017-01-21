@@ -1,12 +1,18 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "W.A.V.E", "W.A.V.E.csproj", "{15334EBD-A0B8-FB27-545F-0869AAB2083D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{15334EBD-A0B8-FB27-545F-0869AAB2083D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15334EBD-A0B8-FB27-545F-0869AAB2083D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15334EBD-A0B8-FB27-545F-0869AAB2083D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15334EBD-A0B8-FB27-545F-0869AAB2083D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
