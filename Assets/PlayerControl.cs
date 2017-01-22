@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class PlayerControl : MonoBehaviour {
@@ -39,8 +40,12 @@ public class PlayerControl : MonoBehaviour {
 		//timer code
 		timer -= Time.deltaTime;
 		GameTimer -= Time.deltaTime;
-		//Debug.Log (GameTimer);
-		if (timer < 0){
+        if (GameTimer <= 0)
+        {
+            SceneManager.LoadScene("wave");
+        }
+        //Debug.Log (GameTimer);
+        if (timer < 0){
 			cooldown = true;
 		}
 

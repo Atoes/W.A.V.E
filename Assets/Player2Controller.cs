@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class Player2Controller : MonoBehaviour {
@@ -34,6 +35,9 @@ public class Player2Controller : MonoBehaviour {
         //timer code
         timer -= Time.deltaTime;
         GameTimer -= Time.deltaTime;
+        if (GameTimer <= 0) {
+            SceneManager.LoadScene("wave");
+        }
         //Debug.Log (GameTimer);
         if (timer < 0)
         {
