@@ -8,8 +8,14 @@ public class PlayerControl : MonoBehaviour {
     private Vector3 input;
     private Vector3 rotateX;
     // Use this for initialization
+	private bool cooldown;
+	private float timer;
+	public float GameTimer = 99;
+
     void Start () {
         rb = GetComponent<Rigidbody>();
+		cooldown = true;
+		timer = -1;
 	}
 	
 	// Update is called once per frame
@@ -18,8 +24,19 @@ public class PlayerControl : MonoBehaviour {
         //var z = Input.GetAxis("Vertical") * Time.deltaTime * 3.0f;
 
         //if (Input.GetAxis("X") != 0) {
-        if (Input.GetKeyDown("space")) { 
+
+		//timer code
+		timer -= Time.deltaTime;
+		GameTimer -= Time.deltaTime;
+		//Debug.Log (GameTimer);
+		if (timer < 0){
+			cooldown = true;
+		}
+
+        if (Input.GetKeyDown("space") && cooldown) { 
             Instantiate(bullet, transform.position + (transform.forward * 2), Quaternion.identity);
+			cooldown = false;
+			timer = 3;
         }
 
         var z = Input.GetAxis("LeftStickV") * Time.fixedDeltaTime * 1500.0f;
