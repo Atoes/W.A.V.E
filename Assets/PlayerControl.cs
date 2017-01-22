@@ -50,13 +50,14 @@ public class PlayerControl : MonoBehaviour {
             PlayAudio(0);
 			timer = 1.5f;
         }
-
         var z = Input.GetAxis("LeftStickV") * Time.fixedDeltaTime * 3000.0f;
         //var x = Input.GetAxis("LeftStickH") * Time.deltaTime * 30.0f;
 
         input = new Vector3(0.0f, 0.0f, Input.GetAxis("LeftStickV"));
-        rotateX = new Vector3(0.0f, Input.GetAxis("RightStickH"), 0.0f);
-        rotateX *= 2700f * Time.deltaTime;
+
+            rotateX = new Vector3(0.0f, Input.GetAxis("RightStickH"), 0.0f);
+            rotateX *= 2700f * Time.deltaTime;
+
 
         Quaternion deltaRotation = Quaternion.Euler(rotateX);
         //transform.position -= transform.forward * z;
