@@ -11,13 +11,24 @@ public class PlayerControl : MonoBehaviour {
 	private bool cooldown;
 	private float timer;
 	public float GameTimer = 99;
-    
+
+    public AudioClip[] audioClip;
+
     void Start () {
         rb = GetComponent<Rigidbody>();
 		cooldown = true;
 		timer = -1;
 	}
 	
+
+    void PlayAudio(int clip)
+    {
+        AudioSource audio = GetComponent<AudioSource>();
+        audio.clip = audioClip[clip];
+        Debug.Log(audioClip[0]);
+        audio.Play();
+
+    } 
 	// Update is called once per frame
 	void FixedUpdate () {
         //var x = Input.GetAxis("Horizontal") * Time.deltaTime * 150.0f;
@@ -36,6 +47,7 @@ public class PlayerControl : MonoBehaviour {
         if (Input.GetAxis("X") != 0 && cooldown) { 
             Instantiate(bullet, transform.position + (transform.forward * 2), Quaternion.identity);
 			cooldown = false;
+            PlayAudio(0);
 			timer = 1.5f;
         }
 

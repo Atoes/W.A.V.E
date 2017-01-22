@@ -18,7 +18,14 @@ public class waveLength : MonoBehaviour {
 
     private GameObject player;
     //Vector3 plsWork = new Vector3 (-2f, 0f, 0f);
+    public AudioClip[] audioClip;
+    void PlayAudio(int clip)
+    {
+        AudioSource audio = GetComponent<AudioSource>();
+        audio.clip = audioClip[clip];
+        audio.Play();
 
+    }
     void Start()
     {
         reflect = false;
@@ -39,11 +46,19 @@ public class waveLength : MonoBehaviour {
         //print("Detected between " + gameObject.name + " and " + collision.collider.name);
         if (collision.collider.name == "wall_Long" || collision.collider.name == "wall_Small" || collision.collider.name == "wall_Small(1)" || collision.collider.name == "wall_Long(1)")
         {
+            PlayAudio(0);
             foreach (ContactPoint contact in collision.contacts)
             {
                 transform.up = 2 * (Vector3.Dot(transform.up, Vector3.Normalize(contact.normal))) * Vector3.Normalize(contact.normal) - transform.up;
                 transform.up *= -1;
             }
+            GameObject wall = GameObject.Find(collision.collider.name);
+            Color myColor = new Color32(0xFF, 0x00, 0x4F, 0xFF);
+            wall.GetComponent<Renderer>().material.color = myColor;
+        }
+        if ((collision.collider.name == "Player") || (collision.collider.name == "Player2"))
+        {
+            PlayAudio(1);
         }
         if (collision.collider.name == "Floor")
         {

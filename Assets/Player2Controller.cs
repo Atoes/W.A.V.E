@@ -18,6 +18,15 @@ public class Player2Controller : MonoBehaviour {
         timer = -1;
     }
 
+    public AudioClip[] audioClip;
+
+    void PlayAudio(int clip)
+    {
+        AudioSource audio = GetComponent<AudioSource>();
+        audio.clip = audioClip[clip];
+        audio.Play();
+
+    }
     // Update is called once per frame
     void FixedUpdate () {
         //var x = Input.GetAxis("Horizontal2") * Time.deltaTime * 150.0f;
@@ -34,6 +43,7 @@ public class Player2Controller : MonoBehaviour {
         {
             Instantiate(bullet2, transform.position + (transform.forward * 2), Quaternion.identity);
             cooldown = false;
+            PlayAudio(0);
             timer = 1.5f;
         }
 
