@@ -5,8 +5,7 @@ using UnityEngine;
 public class PlayerCollision : MonoBehaviour {
 
     void OnCollisionEnter(Collision coll){
-        if ((coll.gameObject.name == "wall_Small") || (coll.gameObject.name == "wall_Small(1)") || 
-            (coll.gameObject.name == "wall_Long") || (coll.gameObject.name == "wall_Long(1)")) {
+        if ((coll.gameObject.name == "bullet(Clone)") || (coll.gameObject.name == "bullet2(Clone)")) {
             Destroy(gameObject);
         }
     }

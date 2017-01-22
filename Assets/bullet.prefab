@@ -23,8 +23,8 @@ GameObject:
   - component: {fileID: 135526845409076368}
   - component: {fileID: 23093382195897974}
   - component: {fileID: 54768108879779666}
-  - component: {fileID: 114917488558872870}
   - component: {fileID: 96206536685022872}
+  - component: {fileID: 114838419701688396}
   m_Layer: 0
   m_Name: bullet
   m_TagString: Untagged
@@ -196,7 +196,7 @@ TrailRenderer:
     textureMode: 0
   m_MinVertexDistance: 0.1
   m_Autodestruct: 1
---- !u!114 &114917488558872870
+--- !u!114 &114838419701688396
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -207,9 +207,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b15cf7fe6347284b8f1ce5326146286, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 5
-  frequency: 5
-  magnitude: 1
 --- !u!135 &135526845409076368
 SphereCollider:
   m_ObjectHideFlags: 1

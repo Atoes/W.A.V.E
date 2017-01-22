@@ -330,14 +330,14 @@ InputManager:
     descriptiveName: X button
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: joystick button 1
+    positiveButton: joystick 1 button 1
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
     snap: 0
-    invert: 0
+    invert: 1
     type: 0
     axis: 0
     joyNum: 1
@@ -345,8 +345,8 @@ InputManager:
     m_Name: X2
     descriptiveName: X button
     descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: joystick button 1
+    negativeButton: joystick 3 button 1
+    positiveButton: joystick 2 button 1
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
@@ -388,7 +388,7 @@ InputManager:
     invert: 1
     type: 2
     axis: 0
-    joyNum: 3
+    joyNum: 2
   - serializedVersion: 3
     m_Name: RightStickH
     descriptiveName: Right Stick Horizontal
@@ -417,10 +417,10 @@ InputManager:
     dead: 0.01
     sensitivity: 0.1
     snap: 0
-    invert: 0
+    invert: 1
     type: 2
     axis: 2
-    joyNum: 3
+    joyNum: 2
   - serializedVersion: 3
     m_Name: LeftStickV
     descriptiveName: Left stick veritcal
@@ -452,7 +452,7 @@ InputManager:
     invert: 0
     type: 2
     axis: 1
-    joyNum: 3
+    joyNum: 2
   - serializedVersion: 3
     m_Name: RightStickV
     descriptiveName: Right stick veritcal
@@ -481,10 +481,10 @@ InputManager:
     dead: 0.01
     sensitivity: 0.1
     snap: 0
-    invert: 0
+    invert: 1
     type: 2
     axis: 5
-    joyNum: 3
+    joyNum: 2
   - serializedVersion: 3
     m_Name: DPadL
     descriptiveName: D pad left

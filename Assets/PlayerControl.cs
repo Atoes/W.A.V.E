@@ -11,7 +11,7 @@ public class PlayerControl : MonoBehaviour {
 	private bool cooldown;
 	private float timer;
 	public float GameTimer = 99;
-
+    
     void Start () {
         rb = GetComponent<Rigidbody>();
 		cooldown = true;
@@ -33,18 +33,18 @@ public class PlayerControl : MonoBehaviour {
 			cooldown = true;
 		}
 
-        if (Input.GetKeyDown("space") && cooldown) { 
+        if (Input.GetAxis("X") != 0 && cooldown) { 
             Instantiate(bullet, transform.position + (transform.forward * 2), Quaternion.identity);
 			cooldown = false;
-			timer = 3;
+			timer = 1.5f;
         }
 
-        var z = Input.GetAxis("LeftStickV") * Time.fixedDeltaTime * 1500.0f;
+        var z = Input.GetAxis("LeftStickV") * Time.fixedDeltaTime * 3000.0f;
         //var x = Input.GetAxis("LeftStickH") * Time.deltaTime * 30.0f;
 
         input = new Vector3(0.0f, 0.0f, Input.GetAxis("LeftStickV"));
         rotateX = new Vector3(0.0f, Input.GetAxis("RightStickH"), 0.0f);
-        rotateX *= 1500f * Time.deltaTime;
+        rotateX *= 2700f * Time.deltaTime;
 
         Quaternion deltaRotation = Quaternion.Euler(rotateX);
         //transform.position -= transform.forward * z;
